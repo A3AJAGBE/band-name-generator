@@ -9,3 +9,4 @@ City = input("Where is your favorite city?\n")
 Num = input("Number of people in the band?\n")
 
 print("Band Name could be " + City + " " + Num)
+
