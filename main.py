@@ -7,3 +7,4 @@ from logo import logo
 
 # Default application displays
 print(logo)
+print("The following inputs will be used to generate a bandname\n")
