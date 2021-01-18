@@ -2,6 +2,6 @@
 
 
 ## Project 1 - Band Name Generator
-Generating a band name with the user's favourite city and number of people in the band
+This is a basic appliaction that prompts the user for their street name and favorite color, then concatenate to display as the output. In this case, a generated band name.
 
 
