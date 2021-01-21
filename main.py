@@ -23,11 +23,21 @@ band_num = int(input("How many people are in the band?\n"))
 response.append(band_num)
 description = input('Describe your band in one word\n').title()
 response.append(description)
+flower = input('What is your favourite flower\n').title()
+response.append(flower)
 
 # Generating band names
 first = random.sample(response, 2)
 second = random.sample(response, 2)
 third = random.sample(response, 2)
+
+# Prevent the combination of the same word twice
+if first == second or first == third:
+    first = random.sample(response, 2)
+elif second == first or second == third:
+    second = random.sample(response, 2)
+else:
+    third = random.sample(response, 2)
 
 # Convert the generated band names using list comprehension
 first_bandname = ' '.join(map(str, first))
