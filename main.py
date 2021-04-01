@@ -1,5 +1,5 @@
 """
-An application to generate band name for users
+An application to generate several names
 """
 
 # Import the logo
@@ -8,41 +8,41 @@ import random
 
 # Default application displays
 print(logo)
-print('The application generates three band name combinations, choose your preferred one.')
-print("The following inputs will be used to generate a band name\n")
+print('The application generates three name combinations, choose your preferred one.')
+print('The following inputs will be used to generate a band name.')
+print('The following are examples of expected inputs: purple, 4, four, influx\n')
 
 # Add the inputs to a list
 response = []
 
-# Inputs
-street = input("Name of your street?\n").title()
-response.append(street)
-color = input("What is your favourite color?\n").title()
-response.append(color)
-band_num = int(input("How many people are in the band?\n"))
-response.append(band_num)
-description = input('Describe your band in one word\n').title()
-response.append(description)
-flower = input('What is your favourite flower\n').title()
-response.append(flower)
 
-# Generating band names
-first = random.sample(response, 2)
-second = random.sample(response, 2)
-third = random.sample(response, 2)
+def start_generating():
 
-# Prevent the combination of the same word twice
-if first == second or first == third:
-    first = random.sample(response, 2)
-elif second == first or second == third:
-    second = random.sample(response, 2)
-else:
-    third = random.sample(response, 2)
+    is_continue = True
+    while is_continue:
 
-# Convert the generated band names using list comprehension
-first_bandname = ' '.join(map(str, first))
-second_bandname = ' '.join(map(str, second))
-third_bandname = ' '.join(map(str, third))
+        for _ in range(3):
+            user_input = input('Enter a word or number: ').capitalize()
 
-print(f'The Band Name generated are: {first_bandname}, {second_bandname}, {third_bandname}')
+            if " " in user_input:
+                print('\nSpace not allowed, input must be a word or number\nStarting again...')
+                response.clear()
+                break
+            else:
+                response.append(user_input)
+        else:
 
+            add_continue = input('Do you want to add more inputs? Yes or No\n').title()
+
+            if add_continue == 'Yes':
+                print('\nContinue..')
+                start_generating()
+            elif add_continue == 'No':
+                is_continue = False
+                print('\nGenerating names...')
+            else:
+                is_continue = False
+                print('\nInvalid response.')
+
+
+start_generating()
