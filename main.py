@@ -1,23 +1,23 @@
 """
-An application to generate several names
+An application to generate several names after prompting the user 5 times.
 """
 
-# Import the logo
 from logo import logo
 import random
 
 # Default application displays
 print(logo)
-print('The application generates three name combinations, choose your preferred one.')
-print('The following inputs will be used to generate a band name.')
+print('The application generates several name combinations derived from your inputs.')
 print('The following are examples of expected inputs: purple, 4, four, influx\n')
 
 
 def generate_names(response_list):
     """This function uses the input list to generate names."""
     generated_list = []
-    for _ in range(3):
-        generated_list.append(random.sample(response_list, 2))
+    for _ in range(10):
+        generated = random.sample(response_list, 2)
+        if generated not in generated_list:
+            generated_list.append(generated)
 
     print('\nGenerated Names: ')
     num = 0
@@ -34,8 +34,8 @@ def start_generating():
         # Add the inputs to a list
         response = []
 
-        # Initial 3 prompts for the user
-        for _ in range(3):
+        # Initial 5 prompts for the user
+        for _ in range(5):
             user_input = input('Enter a word or number: ').capitalize()
 
             if " " in user_input:
