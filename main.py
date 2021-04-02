@@ -1,14 +1,21 @@
 """
 An application to generate several names after prompting the user 5 times.
+if the application is not working, remove the clear function
 """
 
 from logo import logo
+import os
 import random
 
 # Default application displays
 print(logo)
 print('The application generates several name combinations derived from your inputs.')
 print('The following are examples of expected inputs: purple, 4, four, influx\n')
+
+
+def clear():
+    """This function clears the console."""
+    os.system('clear')
 
 
 def generate_names(response_list):
@@ -39,6 +46,8 @@ def start_generating():
             user_input = input('Enter a word or number: ').capitalize()
 
             if " " in user_input:
+                clear()
+                print(logo)
                 print('\nSpace not allowed, input must be a word or number\nStarting again...')
                 response.clear()
                 break
