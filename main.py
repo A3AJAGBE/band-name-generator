@@ -13,6 +13,20 @@ print('The following inputs will be used to generate a band name.')
 print('The following are examples of expected inputs: purple, 4, four, influx\n')
 
 
+def generate_names(response_list):
+    """This function uses the input list to generate names."""
+    generated_list = []
+    for _ in range(3):
+        generated_list.append(random.sample(response_list, 2))
+
+    print('\nGenerated Names: ')
+    num = 0
+    for name in generated_list:
+        num += 1
+        gen = ' '.join(map(str, name))
+        print(f'{num}. {gen}')
+
+
 def start_generating():
     is_continue = True
     while is_continue:
@@ -20,6 +34,7 @@ def start_generating():
         # Add the inputs to a list
         response = []
 
+        # Initial 3 prompts for the user
         for _ in range(3):
             user_input = input('Enter a word or number: ').capitalize()
 
@@ -32,7 +47,8 @@ def start_generating():
 
         else:
             is_continue = False
-            print(response)
+            print(f'Your Inputs: {response}')
+            generate_names(response)
 
 
 start_generating()
