@@ -2,6 +2,6 @@
 
 
 ## Name Generator
-This is a basic appliaction that prompts the user for their street name and favorite color, then concatenate to display as the output. In this case, a generated band name.
+An application to generate several names after prompting the user 5 times, It can be used to generated a two word name for anything.
 
-![Demo](https://github.com/A3AJAGBE/band-name-generator/blob/band-name-app/band-name-update.gif)
+![Demo](https://github.com/A3AJAGBE/name-generator/blob/band-name-app/name-generator.gif)
