@@ -12,14 +12,13 @@ print('The application generates three name combinations, choose your preferred 
 print('The following inputs will be used to generate a band name.')
 print('The following are examples of expected inputs: purple, 4, four, influx\n')
 
-# Add the inputs to a list
-response = []
-
 
 def start_generating():
-
     is_continue = True
     while is_continue:
+
+        # Add the inputs to a list
+        response = []
 
         for _ in range(3):
             user_input = input('Enter a word or number: ').capitalize()
@@ -30,19 +29,10 @@ def start_generating():
                 break
             else:
                 response.append(user_input)
+
         else:
-
-            add_continue = input('Do you want to add more inputs? Yes or No\n').title()
-
-            if add_continue == 'Yes':
-                print('\nContinue..')
-                start_generating()
-            elif add_continue == 'No':
-                is_continue = False
-                print('\nGenerating names...')
-            else:
-                is_continue = False
-                print('\nInvalid response.')
+            is_continue = False
+            print(response)
 
 
 start_generating()
