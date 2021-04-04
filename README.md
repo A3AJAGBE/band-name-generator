@@ -1,6 +1,3 @@
-#Day1 of #100DaysOfCode
-
-
 ## Name Generator
 An application to generate several names after prompting the user 5 times for a word or number, can be used to generate a two-word name for anything.
 
